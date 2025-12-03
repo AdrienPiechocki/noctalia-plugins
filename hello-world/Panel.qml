@@ -55,6 +55,24 @@ Item {
             pointSize: Style.fontSizeXXL * 3 * Style.uiScaleRatio
           }
 
+          // Core I18n translation example
+          NText {
+            Layout.alignment: Qt.AlignHCenter
+            text: I18n.tr("lock-screen.welcome-back")
+            pointSize: Style.fontSizeL
+            font.weight: Font.Medium
+            color: Color.mOnSurface
+          }
+
+          // Local pluginApi translation
+          NText {
+            Layout.alignment: Qt.AlignHCenter
+            text: pluginApi?.tr("panel.test")
+            pointSize: Style.fontSizeL
+            font.weight: Font.Medium
+            color: Color.mOnSurface
+          }
+
           NText {
             Layout.alignment: Qt.AlignHCenter
             text: pluginApi?.pluginSettings?.message || pluginApi?.manifest?.metadata?.defaultSettings?.message || ""
@@ -63,7 +81,7 @@ Item {
             color: Color.mPrimary
           }
 
-          Text {
+          NText {
             Layout.alignment: Qt.AlignHCenter
             text: "This is a plugin panel!"
             font.pointSize: Style.fontSizeL * Style.uiScaleRatio
@@ -142,7 +160,7 @@ Item {
               Layout.fillWidth: true
               spacing: Style.marginM
 
-              Text {
+              NText {
                 text: "IPC Commands:"
                 font.pointSize: Style.fontSizeS
                  font.family: Settings.data.ui.fontFixed
